@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+            Django App
+        {% endblock title %}
+
+    </title>
+    <link rel="stylesheet" href="{% static 'css/fanta.css' %}">
+    {% comment %} <script src="{% static 'js/main.js' %}" defer></script> {% endcomment %}
+</head>
+<body>
+    <nav class="">
+        <a href="{% url "home" %}">🏠</a> |
+        <a href="{% url 'about' %}">😀</a> |
+        <a href="{% url "posts:list" %}">📰</a> |
+        <a href="/admin">👮</a> |
+    </nav>
+
+    <main>
+        {% block content %}{% endblock content %}
+    </main>
+</body>
+</html>

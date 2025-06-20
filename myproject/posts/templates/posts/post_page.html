@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}{{post.title}}{% endblock title %}
+
+{% block content %}
+
+<section>
+    <img src="{{post.banner.url}}" alt="{{post.title}}" class="banner-3d">
+    <h1 class="text-gradient">{{post.title}}</h1>
+    <p>{{post.date}}</p>
+    <p>{{post.body}}</p>
+</section>
+<footer>
+    <p>Check out my <a href="/" class="">Home</a> Page. </p>
+</footer>
+
+{% endblock content %}

@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}Post{% endblock title %}
+
+{% block content %}
+<header><h1 class="text-gradient">Posts List</h1></header>
+
+<main>
+{% for post in posts %}
+    
+    <article class="card">
+        <h2 class="text-gradient">
+            <a href="{% url 'posts:page' slug=post.slug %}">{{post.title}}</a>
+            
+        </h2>
+        <p>{{post.date}}</p>
+        {% comment %} <p>{{post.body}}</p> {% endcomment %}
+    </article>
+
+{% endfor %}
+</main>
+<br>
+<footer>
+    <p>Check out my <a href="/" class="">Home</a> Page. </p>
+</footer>
+
+{% endblock content %}
